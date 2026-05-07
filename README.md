@@ -20,7 +20,7 @@ Manually entering test data into forms during development or testing is repetiti
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/fake-filler-pro-ak.git
+   git clone https://github.com/apurbakarar/fake-filler-pro-ak.git
    ```
 2. Open Chrome and navigate to `chrome://extensions/`
 3. Enable "Developer mode" (toggle in top right)
@@ -40,13 +40,15 @@ Manually entering test data into forms during development or testing is repetiti
 
 ## What I Had to Fix
 
-1. **Manifest permissions** - Added explicit `host_permissions` declaration for better clarity and future-proofing, as the original only had implicit `<all_urls>` in content scripts
-2. **Responsive design** - Fixed the fixed-width popup (320px) that could cause overflow on small screens; added `max-width: 100%` and `box-sizing: border-box` for better responsiveness
-3. **Accessibility contrast** - Improved color contrast for secondary button backgrounds to meet WCAG AA compliance standards
+1. **Responsive design** - Fixed the design of the popup. It was breaking. So i have checked manually and instructed to AI to fix the particular section.
+2. **Functionality** - AI confidently said that all the functionlaity is working correct but when I checked that the Clear Fields button was not working.
 
 ## What I Learned About Vibe Coding
 
 - **What works**: AI excels at generating boilerplate code, handling standard patterns (like form filling logic), and catching common edge cases in well-defined problems
 - **What doesn't**: AI sometimes misses subtle UX issues like responsive design constraints and accessibility requirements that require human testing on actual devices
 - **What surprised me**: The AI's ability to understand complex message-passing patterns between popup and content scripts, and suggest appropriate event dispatching for form elements
-# fake-filler-pro-ak
+
+# Author
+
+Created by Apurba Karar
