@@ -20,7 +20,7 @@ Manually entering test data into forms during development or testing is repetiti
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/apurbakarar/fake-filler-pro-ak.git
+   git clone https://github.com/apurbakarar/fake-filler-lite-ak.git
    ```
 2. Open Chrome and navigate to `chrome://extensions/`
 3. Enable "Developer mode" (toggle in top right)
