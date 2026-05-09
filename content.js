@@ -10,12 +10,6 @@ function generateDynamicValue(value) {
     return val.replace(/{rand}/g, generateRandomNumber(6));
   }
 
-  // ✅ Email auto-random (every time)
-  if (val.includes("@") && !val.match(/\d{6}@/)) {
-    const [prefix, domain] = val.split("@");
-    return `${prefix}${generateRandomNumber(6)}@${domain}`;
-  }
-
   // ✅ Other tokens
   if (val.includes("{timestamp}")) {
     return val.replace(/{timestamp}/g, Date.now());
@@ -103,13 +97,10 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     });
   }
 
-  // 🔍 Fetch Fields (unchanged)
+  // 🔍 Fetch Fields (only fields inside form element)
   if (request.action === "fetchFields") {
 
-    const elements = document.querySelectorAll(
-      "input:not([type=hidden]), textarea, select"
-    );
-
+    const elements = document.querySelectorAll('form input:not([type=hidden]), form textarea, form select');
     const fields = [];
 
     elements.forEach(el => {
